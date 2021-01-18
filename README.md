@@ -12,3 +12,5 @@ Content:
     main.py -> read data from Data folder, construct the graph, perform the optimization algorithm, plot results 
     
 Results:
+![Unoptimized_graph](https://user-images.githubusercontent.com/72970001/104933792-a1925900-59a9-11eb-9b82-62cf265e78f6.png)
+
