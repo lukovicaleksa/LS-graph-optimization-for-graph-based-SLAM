@@ -12,5 +12,11 @@ Content:
     main.py -> read data from Data folder, construct the graph, perform the optimization algorithm, plot results 
     
 Results:
+
 ![Unoptimized_graph](https://user-images.githubusercontent.com/72970001/104933792-a1925900-59a9-11eb-9b82-62cf265e78f6.png)
+
+![Unoptimized_graph_with_constraints](https://user-images.githubusercontent.com/72970001/104933881-bcfd6400-59a9-11eb-9db4-1241a8189cb4.png)
+
+![Optimized_graph](https://user-images.githubusercontent.com/72970001/104933887-bff85480-59a9-11eb-8726-ac98495f530b.png)
+
 
