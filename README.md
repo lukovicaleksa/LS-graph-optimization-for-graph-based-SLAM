@@ -5,7 +5,7 @@ Content:
 
     Data -> folder containing Graph Vertices and Edges data needed for the algorithm
         
-    pg_functions.py -> functions needed for the algorithm 
+    [pg_classes.py]pg_functions.py -> functions needed for the algorithm 
     
     pg_classes.py -> classes needed for Graph representation and optimization algorithm
     
