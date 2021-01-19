@@ -2,7 +2,6 @@
 Implementation of Least Squares Graph Optimization algorithm for graph-based SLAM.
 
 Content:
-
     Data -> folder containing Graph Vertices and Edges data needed for the algorithm
         
     [pg_functions.py](pg_functions.py) -> functions needed for the algorithm 
