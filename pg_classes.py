@@ -76,14 +76,16 @@ class PoseGraph:
                                    mean = e_mean,
                                    inf_mat = e_inf_mat))
             
-    def optimize(self, n_iterations):
+    def optimize(self, max_iterations, tolerance):
         """
         Pose Graph optimization - Least Squares error minimization
         """
         norm_dX_out = []
+        tol_cnt = 0 # tolerance counter
+        opt_iterations = None # number of iterations in optimization process 
         t_opt_start = time.time()
         
-        for i in range(n_iterations):
+        for i in range(max_iterations):
             t_step_start = time.time() 
             
             if self.verbose:
@@ -97,7 +99,8 @@ class PoseGraph:
 
             if self.verbose:
                 print ('Linearizing ...')
-                
+            
+            # Linearization of error function and formulating a sparse Linear system
             self.linearize()
             
             if self.verbose:
@@ -110,16 +113,30 @@ class PoseGraph:
             if self.verbose:
                 print('Updating vertices ...')
                 
+            # Update graph vertices(nodes) with dX = [dx dy dtheta]
             self.update_vertices(dX)
             
             if self.verbose:
                 print('Step duration: %f [s]' % (time.time() - t_step_start))
                 print('|dX| = %f' % norm_dX)
-         
-        if self.verbose:
-            print('\r\nOptimization finished!')
-            print('Optimization process duration: %.2f [s]' % (time.time() - t_opt_start))
+                
+            # Convergence check
+            if i >= 1 and np.abs(norm_dX_out[i] - norm_dX_out[i-1]) < tolerance:
+                tol_cnt += 1
+            else:
+                tol_cnt = 0
+                
+            if tol_cnt >= 3:
+                opt_iterations = i + 1
+                break
             
+        if self.verbose:
+            if opt_iterations == None:
+                print('\r\nOptimization process finished - maximum number of iterations reached!')
+            else:        
+                print('\r\nOptimization process converged after %d iterations!' % opt_iterations)
+            print('Optimization process duration: %.2f [s]' % (time.time() - t_opt_start))
+        
         return norm_dX_out
             
     def linearize(self):

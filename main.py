@@ -16,7 +16,7 @@ if __name__ == '__main__':
     pg.plot_graph(title = 'Unoptimized Graph with Constraints', show_constraints = True)
 
     # Graph Optimization
-    norm_dX = pg.optimize(n_iterations = 10)
+    norm_dX = pg.optimize(max_iterations = 20, tolerance = 0.1)
 
     # Plot Graph Convergence
     plt.figure(3)
