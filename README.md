@@ -2,8 +2,9 @@
 Implementation of Least Squares Graph Optimization algorithm for graph-based SLAM.
 
 Content:
-* [Algorithm Pseudocode](AlgorithmPseudocode.PNG) -> Optimization procedure pseudocode
+* [Papers](Papers) -> Material used for the project
 * [Data](Data) -> folder containing Graph Vertices and Edges data needed for the algorithm
+* [Results](Results) -> folder containing resulting Graph images
 * [pg_functions.py](pg_functions.py) -> functions needed for the algorithm   
 * [pg_classes.py](pg_classes.py) -> classes needed for Graph representation and optimization algorithm  
 * [main.py](main.py) -> read data from Data folder, construct the graph, perform the optimization algorithm, plot results 
