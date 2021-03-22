@@ -1,7 +1,7 @@
 # LS-graph-optimization-for-graph-based-SLAM
 Implementation of Least Squares Graph Optimization algorithm for graph-based SLAM.
 
-Content:
+# Content:
 * [Papers](Papers) -> materials used for the project
 * [Data](Data) -> folder containing Graph Vertices and Edges data needed for the algorithm
 * [Results](Results) -> folder containing resulting Graph images
@@ -9,7 +9,7 @@ Content:
 * [pg_classes.py](pg_classes.py) -> classes needed for Graph representation and optimization algorithm  
 * [main.py](main.py) -> read data from Data folder, construct the graph, perform the optimization algorithm, plot results 
     
-Results:
+# Results:
 
 ![Unoptimized_graph](https://user-images.githubusercontent.com/72970001/104933792-a1925900-59a9-11eb-9b82-62cf265e78f6.png)
 
